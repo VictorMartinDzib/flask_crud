@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      <title>Document</title>
+</head>
+<body>
+      <h1>Lista de animales</h1>
+      <div class="row">
+            <div class="col">
+                  {% for animal in animales %}
+                        <h4> {{ animal.name }} </h4>
+                  {% endfor %}
+            </div>
+            <div class="col">
+                  <form action="{{base_url}}/create" method="POST">
+                        <input type="text" name="nameA">
+                        <input type="text" name="specie">
+                        <button type="submit" class="btn btn-success">Save</button>
+                  </form>
+            </div>
+      </div>
+</body>
+</html>
